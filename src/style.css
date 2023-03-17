@@ -1,0 +1,456 @@
+/* Color 
+Primary Color     : #212529
+Alternatif Color  : #343a40
+Font-Color        : #f8f9fa
+font-family       : font-family: 'Ubuntu', sans-serif;
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  /* mengatur semua font yang ada dalam body */
+  font-family: "Ubuntu", sans-serif;
+}
+ul {
+  list-style: none;
+}
+li {
+  text-decoration: none;
+}
+/*=========== bagian header */
+header {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #212529;
+  color: #f8f9fa;
+}
+
+header h1 {
+  font-size: 24px;
+  padding-left: 20px;
+}
+
+.menubar {
+  display: flex;
+  list-style: none;
+}
+.menubar li:hover {
+  color: red;
+  cursor: pointer;
+  border-right: red solid 1px;
+  padding: 0 10px;
+  border-left: red solid 1px;
+}
+.menubar li {
+  margin: 0 10px;
+}
+/* memberikan margin kanan untuk li terakhir */
+.menubar li:last-child {
+  margin-right: 20px;
+}
+/* ================bagian konten */
+.content-wrapper {
+  height: auto;
+  background-color: #343a40;
+  width: auto;
+  min-width: 635px;
+}
+.top-wrapper {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  height: auto;
+  height: 500px;
+  padding-top: 180px;
+  background-image: url("/src/images/darker-cover.png");
+  background-size: cover;
+}
+.heading {
+  color: #f8f9fa;
+  margin-bottom: 10px;
+}
+.description {
+  margin: 0 10%;
+  text-align: justify;
+  font-size: 24px;
+  color: #f8f9fa;
+}
+
+.menu-top {
+  display: flex;
+  width: 100%;
+  height: 50px;
+  color: #f8f9fa;
+  border-top: solid red 1px;
+  background-color: #212529;
+}
+.categories {
+  padding: 0 20px;
+}
+.categories h3 {
+  line-height: 50px;
+}
+.categories-list {
+  display: flex;
+  width: 100%;
+}
+.categories-list a {
+  padding: 0 25px;
+  line-height: 50px;
+  color: inherit;
+  text-decoration: none;
+}
+.categories-list a:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.categories-list a:last-child {
+  color: #f8f9fa;
+}
+.categories-list a:last-child:hover {
+  color: red;
+}
+/* ========================Bagian Movies */
+.movies {
+  width: 100%;
+}
+.movies-list {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  border-bottom: solid red 1px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.card {
+  /* border: solid red 3px; */
+  margin: 20px 10px;
+  width: 200px;
+  height: 300px;
+  background-color: white;
+  transition: all 0.3s;
+  /* box-shadow: 0px 5px black; */
+}
+.card p {
+  text-align: center;
+  font-size: 14px;
+  color: #f8f9fa;
+}
+.card > img {
+  width: inherit;
+  height: inherit;
+}
+.card:hover {
+  cursor: pointer;
+  /* box-shadow: none; */
+}
+.card:active {
+  transform: translateY(10px);
+}
+.movies-list a {
+  text-decoration: none;
+}
+
+
+/* ================= Feedback-form */
+.feedback-form{
+  padding: 40px 0px;
+  text-align: center;
+  align-items: center;
+  background: #212529;
+}
+
+.feedback-form h3, p{
+  color: #f8f9fa;
+}
+
+.rating{
+  position: relative;
+  width: 400px;
+  background: #212529;
+  padding: 20px 30px;
+  margin-top: 20px;
+  border: 1px solid #444;
+  border-radius: 5px;
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.rating p{
+  padding-bottom: 20px;
+}
+
+.star-widget input{
+  display: none;
+}
+
+.star-widget label{
+  font-size: 40px;
+  color: #f8f9fa;
+  padding: 15px;
+  float: right;
+  transition: all 0.2s ease;
+  justify-content: center;
+}
+
+.star-widget input:not(:checked) ~ label:hover,
+input:not(:checked) ~ label:hover ~ label{
+  color: #fd4;
+}
+
+.star-widget input:checked ~ label{
+  color: #fd4;
+}
+
+.star-widget input#rate-5:checked ~ label{
+  color: #fe7;
+  text-shadow: 0 0 20px #952;
+}
+
+#rate-1:checked ~ form header:before{
+  content: "I just hate it 😡";
+}
+
+#rate-2:checked ~ form header:before{
+  content: "I don't like it 🙁";
+}
+
+#rate-3:checked ~ form header:before{
+  content: "I is awesome 😄";
+}
+
+#rate-4:checked ~ form header:before{
+  content: "I just like it 😎";
+}
+
+#rate-5:checked ~ form header:before{
+  content: "I love it 😍";
+}
+
+.rating form{
+  display: none;
+}
+
+input:checked ~ form{
+  display: block;
+}
+
+form header{
+  width: 100%;
+  font-size: 25px;
+  display: inline-block;
+  color: #fe7;
+  font-weight: 500;
+  margin: 5px 0px;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+form .textarea-fb{
+  height: 100px;
+  width: 100%;
+  overflow: hidden;
+}
+
+form .textarea-fb textarea{
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: 1px solid #333;
+  background-color: #343a40;
+  padding: 10px;
+  font-size: 17px;
+  color: #f8f9fa;
+  resize: none;
+}
+
+form .btn{
+  height: 45px;
+  width: 100%;
+  margin: 15px 0px;
+}
+
+form .btn button{
+  height: 100%;
+  width: 100%;
+  border: 1px solid #444;
+  outline: none;
+  background: #343a40;
+  color: #f8f9fa;
+  font-size: 17px;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+form .btn button:hover{
+  background: #1b1b1b;
+}
+
+/* .banner-movies {
+  width: inherit;
+  height: inherit;
+} */
+/* ================= akhir bagian konten */
+footer {
+  padding-top: 30px;
+  width: 100%;
+  height: 220px;
+  background-color: rgb(48, 46, 46);
+}
+/* body {
+  line-height: 1.5;
+  font-family: "Poppins", sans-serif;
+} */
+/*  {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} */
+.container {
+  max-width: 1170px;
+  margin: auto;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+ul {
+  list-style: none;
+}
+
+.footer-col {
+  width: 16%;
+  padding: 0 15px;
+}
+.footer-col h4 {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 1);
+  text-transform: capitalize;
+  margin-bottom: 35px;
+  font-weight: 500;
+  position: relative;
+}
+.footer-col h4::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  background-color: red;
+  height: 2px;
+  box-sizing: border-box;
+  width: 50px;
+}
+.footer-col ul li:not(:last-child) {
+  margin-bottom: 10px;
+}
+.footer-col ul li a {
+  font-size: 16px;
+  text-transform: capitalize;
+  color: rgba(255, 255, 255, 1);
+  text-decoration: none;
+  font-weight: 300;
+  color: #bbbbbb;
+  display: block;
+  transition: all 0.3s ease;
+}
+.footer-col ul li a:hover {
+  color: red;
+  padding-left: 8px;
+}
+.footer-col .social-media a {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 0 10px 10px 0;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0 10px 10px 0;
+  transition: all 0.5s ease;
+}
+.footer-col .social-media a:hover {
+  color: red;
+  background-color: rgba(236, 236, 236, 0.8);
+}
+.fixed-footer {
+  width: 100%;
+  position: relative;
+  background: #333;
+  margin: 0 10px 10px 0;
+  padding: 10px 0;
+  color: rgba(255, 255, 255, 1);
+  text-align: center;
+}
+.fixed-footer {
+  bottom: 0;
+}
+
+.bottom-bar {
+  width: 100%;
+  height: 50px;
+  padding-left: 20%;
+  display: flex;
+  align-items: center;
+  background-color: rgb(26, 25, 25);
+  color: #f8f9fa;
+}
+
+.bottom-bar h1 {
+  font-size: 24px;
+  padding-left: 20px;
+}
+
+.bottom-menubar {
+  display: flex;
+  list-style: none;
+}
+.bottom-menubar li a {
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+}
+.con {
+  width: 500px;
+}
+
+.con1 {
+  width: 30px;
+}
+
+/*responsive*/
+@media (max-width: 767px) {
+  .footer-col {
+    width: 50%;
+    margin-bottom: 30px;
+  }
+  footer {
+    height: 700px;
+  }
+}
+@media (max-width: 574px) {
+  .footer-col {
+    width: 100%;
+  }
+  footer {
+    height: 700px;
+  }
+}
+@media (max-width: 400px) {
+  .footer-col {
+    width: 100%;
+  }
+  footer {
+    height: 800px;
+  }
+}

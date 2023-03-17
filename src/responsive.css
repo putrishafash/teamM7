@@ -1,0 +1,16 @@
+/* tablet */
+@media (max-width: 1000px) {
+}
+
+/* smartphone */
+@media (max-width: 670px) {
+  .top-wrapper {
+    padding-top: 40px;
+  }
+  .categories {
+    display: none;
+  }
+  .categories-list {
+    justify-content: center;
+  }
+}
